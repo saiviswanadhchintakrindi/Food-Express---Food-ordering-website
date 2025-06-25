@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Food Express</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#restaurants">Restaurants</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#" class="btn">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+<head>
+  <title>{{ restaurant.name }} - FoodExpress</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>{{ restaurant.name }}</h1>
+  </header>
+
+  <section class="restaurant-dishes">
+    {% for dish in restaurant.dishes %}
+    <div class="card">
+      <img src="{{ url_for('static', filename=dish.img) }}" alt="{{ dish.name }}">
+      <h3>{{ dish.name }}</h3>
+      <p>${{ dish.price }}</p>
+      <button class="add-to-cart" data-name="{{ dish.name }}" data-price="{{ dish.price }}">Add to Cart</button>
+    </div>
+    {% endfor %}
+  </section>
+</body>
+</html>
+

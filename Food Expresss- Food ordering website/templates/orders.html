@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>My Orders</h1>
+  <table border="1">
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Time</th>
+    </tr>
+    {% for item, qty, price, time in orders %}
+    <tr>
+      <td>{{ item }}</td>
+      <td>{{ qty }}</td>
+      <td>${{ "%.2f"|format(price) }}</td>
+      <td>{{ time }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <a href="/">Back to Home</a>
+</body>
+</html>

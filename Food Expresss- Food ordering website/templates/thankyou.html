@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f3f4f6;
+    }
+    .tick {
+      font-size: 100px;
+      color: green;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    .btn-group {
+      margin-top: 30px;
+    }
+    .btn {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #2563eb;
+      color: white;
+    }
+    .btn:hover {
+      background-color: #1e40af;
+    }
+  </style>
+</head>
+</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <img src="https://img.icons8.com/emoji/96/000000/check-mark-emoji.png" alt="Check" />
+    <h1>Thank you for your order!</h1>
+    <a href="{{ url_for('index') }}"><button class="btn">Back to Home</button></a>
+    <a href="{{ url_for('orders') }}"><button class="btn">My Orders</button></a>
+{% endblock %}
+

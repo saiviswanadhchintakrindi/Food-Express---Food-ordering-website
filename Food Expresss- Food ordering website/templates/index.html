@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodExpress - Online Delivery</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='1.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+<div class="logo">
+  <img src="{{ url_for('static', filename='0.png') }}" alt="Logo" class="logo-img">
+  <span>Food Express</span>
+</div>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#restaurants">Restaurants</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#" class="btn">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Fast & Fresh Food Delivered to Your Door</h1>
+      <p>Order from your favorite restaurants in just a few clicks.</p>
+      <a href="#restaurants" class="btn">Browse Restaurants</a>
+    </div>
+  </section>
+
+  
+<section class="restaurants" id="restaurants">
+  <h2>Popular Restaurants</h2>
+  <div class="restaurant-cards">
+    <div class="restaurant-card">
+      <img src="{{ url_for('static', filename='pizza_hut.jpg') }}" alt="Pizza House">
+      <h3>Pizza Hut</h3>
+<div class="star-rating">
+  ★★★★☆ <span class="rating-value">(4.0)</span>
+</div>
+<p>Italian, Fast Food</p>
+
+      <div class="restaurant-menu">
+        <div class="card">
+          <img src="{{ url_for('static', filename='cheese_pizza.jpg') }}" alt="Cheese Pizza">
+          <h3>Cheese Pizza</h3>
+          <p>$12.99</p>
+          <button class="add-to-cart" data-name="Cheese Pizza" data-price="12.99">Add to Cart</button>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='veggie_pizza.jpg') }}" alt="Veggie Pizza">
+          <h3>Veggie Pizza</h3>
+          <p>$11.49</p>
+          <button class="add-to-cart" data-name="Veggie Pizza" data-price="11.49">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="restaurant-card">
+      <img src="{{ url_for('static', filename='Burger.jpg') }}" alt="Burger King">
+      <h3>Burger King</h3>
+      <div class="star-rating">
+        ★★★★☆ <span class="rating-value">(4.0)</span>
+      </div>
+      <p>American, Burgers</p>
+      <div class="restaurant-menu">
+        <div class="card">
+          <img src="{{ url_for('static', filename='beef_burger.jpg') }}" alt="Beef Burger">
+          <h3>Beef Burger</h3>
+          <p>$9.99</p>
+          <button class="add-to-cart" data-name="Beef Burger" data-price="9.99">Add to Cart</button>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='chicken_burger.jpg') }}" alt="Chicken Burger">
+          <h3>Chicken Burger</h3>
+          <p>$8.49</p>
+          <button class="add-to-cart" data-name="Chicken Burger" data-price="8.49">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="restaurant-card">
+  <img src="{{ url_for('static', filename='waffle.jpg') }}" alt="Belgian Waffle">
+  <h3>Belgian Waffle</h3>
+  <div class="star-rating">
+   ★★★★★ <span class="rating-value">(5.0)</span>
+  </div>
+  <p>Desserts, Waffles</p>
+  <div class="restaurant-menu">
+    <div class="card">
+      <img src="{{ url_for('static', filename='choco_waffle.jpg') }}" alt="Choco Waffle">
+      <h3>Choco Waffle</h3>
+      <p>$6.99</p>
+      <button class="add-to-cart" data-name="Choco Waffle" data-price="6.99">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='strawberry_waffle.jpg') }}" alt="Strawberry Waffle">
+      <h3>Strawberry Waffle</h3>
+      <p>$7.49</p>
+      <button class="add-to-cart" data-name="Strawberry Waffle" data-price="7.49">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="restaurant-card">
+  <img src="{{ url_for('static', filename='bakery_world.jpg') }}" alt="Bakery World">
+  <h3>Bakery World</h3>
+  <div class="star-rating">
+    ★★★★☆ <span class="rating-value">(4.2)</span>
+  </div>
+  <p>Cakes, Pastries</p>
+  <div class="restaurant-menu">
+    <div class="card">
+      <img src="{{ url_for('static', filename='chocolate_cake.jpg') }}" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>$8.99</p>
+      <button class="add-to-cart" data-name="Chocolate Cake" data-price="8.99">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="{{ url_for('static', filename='croissant.jpg') }}" alt="Croissant">
+      <h3>Butter Croissant</h3>
+      <p>$3.49</p>
+      <button class="add-to-cart" data-name="Butter Croissant" data-price="3.49">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+    <div class="restaurant-card">
+      <img src="{{ url_for('static', filename='sushi_master.jpg') }}" alt="Sushi Master">
+      <h3>Sushi Master</h3>
+       <div class="star-rating">
+         ★★★★☆ <span class="rating-value">(4.0)</span>
+       </div>
+      <p>Japanese, Sushi</p>
+      <div class="restaurant-menu">
+        <div class="card">
+          <img src="{{ url_for('static', filename='sushi_box.jpg') }}" alt="Sushi Box">
+          <h3>Sushi Box</h3>
+          <p>$15.99</p>
+          <button class="add-to-cart" data-name="Sushi Box" data-price="15.99">Add to Cart</button>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='salmon_roll.jpg') }}" alt="Salmon Roll">
+          <h3>Salmon Roll</h3>
+          <p>$13.49</p>
+          <button class="add-to-cart" data-name="Salmon Roll" data-price="13.49">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="menu" id="menu">
+    <h2>Featured Dishes</h2>
+    <div class="food-cards">
+      <div class="card">
+        <img src="{{ url_for('static', filename='cheese_pizza.jpg') }}" alt="Pizza">
+        <h3>Cheese Pizza</h3>
+        <p>$12.99</p>
+        <button class="add-to-cart" data-name="Cheese Pizza" data-price="12.99">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='beef_burger.jpg') }}" alt="Burger">
+        <h3>Beef Burger</h3>
+        <p>$9.99</p>
+        <button class="add-to-cart" data-name="Beef Burger" data-price="9.99">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='chocolate_cake.jpg') }}" alt="Sushi">
+        <h3>Chocolate Cake</h3>
+        <p>$15.99</p>
+        <button class="add-to-cart" data-name="Chocolate cake" data-price="15.99">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cart" id="cart">
+    <h2>Your Cart</h2>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-total" id="cart-total">
+      <strong>Total:</strong> <strong id="total-price">$0.00</strong>
+    </div>
+    <form method="POST" action="/checkout" id="checkout-form">
+      <input type="hidden" name="cart-data" id="cart-data" />
+<form method="POST" action="/checkout" id="checkout-form"> <!-- ✅ Keep this -->
+
+  <button type="submit" class="btn-orange">Checkout</button>
+</form>
+<form id="delivery-form" method="POST" action="/placeorder" style="display: none; margin-top: 50px;">
+  <h3>Delivery Information</h3>
+
+  <label>Full Name*<br>
+    <input type="text" name="fullname" required>
+  </label><br><br>
+
+  <label>Phone Number*<br>
+    <input type="tel" name="phone" required pattern="[0-9]{10}" title="Enter a 10-digit phone number">
+  </label><br><br>
+
+  <label>Address*<br>
+    <textarea name="address" rows="3" required></textarea>
+  </label><br><br>
+
+  <label>City*<br>
+    <input type="text" name="city" required>
+  </label><br><br>
+
+  <label>Postal Code*<br>
+    <input type="text" name="postal" required pattern="[0-9]{5,6}" title="Enter a valid postal code">
+  </label><br><br>
+<form method="POST" action="/placeorder" id="place-form">
+  <button type="submit" class="btn-orange">Place Order</button>
+</div>
+
+
+     
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FoodExpress. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  let cart = []; // Make cart global
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartItemsDiv = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+
+        updateCart();
+      });
+    });
+
+    function updateCart() {
+      cartItemsDiv.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item) => {
+        const totalItemPrice = item.price * item.quantity;
+        total += totalItemPrice;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = `
+          <div class="cart-item">
+            <span class="item-name">${item.name}</span>
+            <div class="quantity-controls">
+              <button class="qty-btn decrease" data-name="${item.name}">−</button>
+              <span class="quantity">${item.quantity}</span>
+              <button class="qty-btn increase" data-name="${item.name}">+</button>
+            </div>
+            <span class="item-price">$${totalItemPrice.toFixed(2)}</span>
+            <button class="delete-btn" data-name="${item.name}">🗑️</button>
+          </div>
+        `;
+        cartItemsDiv.appendChild(itemDiv);
+      });
+
+      totalPriceElement.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Cart manipulation buttons
+    cartItemsDiv.addEventListener("click", function (e) {
+      const name = e.target.dataset.name;
+
+      if (e.target.classList.contains("increase")) {
+        const item = cart.find(i => i.name === name);
+        item.quantity++;
+      } else if (e.target.classList.contains("decrease")) {
+        const item = cart.find(i => i.name === name);
+        if (item.quantity > 1) {
+          item.quantity--;
+        } else {
+          cart = cart.filter(i => i.name !== name);
+        }
+      } else if (e.target.classList.contains("delete-btn")) {
+        cart = cart.filter(i => i.name !== name);
+      }
+
+      updateCart();
+    });
+
+    // 🚫 Prevent checkout if cart is empty
+    const checkoutForm = document.getElementById("checkout-form");
+    checkoutForm.addEventListener("submit", function (e) {
+      if (cart.length === 0) {
+        e.preventDefault();
+        alert("Please add at least one dish to the cart before checking out.");
+      } else {
+        // Optional: send cart data via hidden input
+        document.getElementById("cart-data").value = JSON.stringify(cart);
+      }
+    });
+  });
+</script>
+
+
+</script>
+<script>
+document.getElementById('checkout-btn').addEventListener('click', function () {
+  document.getElementById('main-content').innerHTML = `
+    <div class="tick">✔️</div>
+    <h1>Thank you for your order!</h1>
+    <div class="btn-group">
+<button class="btn" onclick="window.location.href='{{ url_for('index') }}'">Back to Home</button>
+
+      <button class="btn" onclick="alert('Orders page coming soon!')">My Orders</button>
+    </div>
+  `;
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const browseBtn = document.querySelector(".hero .btn");
+  const restaurantsSection = document.getElementById("restaurants");
+
+  browseBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Show and animate the section
+    restaurantsSection.classList.add("show");
+
+    // Scroll smoothly into view
+    restaurantsSection.scrollIntoView({ behavior: "smooth" });
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutForm = document.getElementById("checkout-form");
+  const deliveryForm = document.getElementById("delivery-form");
+
+  checkoutForm.addEventListener("submit", function (e) {
+    if (cart.length === 0) {
+      e.preventDefault();
+      alert("Please add at least one dish to the cart before checking out.");
+    } else {
+      e.preventDefault(); // prevent real form submission initially
+
+      // Show delivery form
+      deliveryForm.style.display = "block";
+
+      // Pass cart data to hidden input
+      document.getElementById("cart-data").value = JSON.stringify(cart);
+
+      // Scroll to the delivery form
+      deliveryForm.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+</script>
+
+
+
+</html>

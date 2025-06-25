@@ -1,0 +1,40 @@
+<!-- dishes.html -->
+<body onload="loadDishes()">
+  <div id="dishes-container"></div>
+
+  <script>
+    const dishData = {
+      pizzaHouse: [
+        { name: "Margherita", img: "images/margherita.jpg" },
+        { name: "Veggie Feast", img: "images/veggiefeast.jpg" }
+      ],
+      bakeryWorld: [
+        { name: "Chocolate Muffin", img: "images/muffin.jpg" },
+        { name: "Croissant", img: "images/croissant.jpg" }
+      ]
+    };
+
+    function getRestaurantFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("restaurant");
+    }
+
+    function loadDishes() {
+      const restaurant = getRestaurantFromURL();
+      const dishes = dishData[restaurant] || [];
+      const container = document.getElementById("dishes-container");
+      container.innerHTML = "";
+
+      dishes.forEach(dish => {
+        container.innerHTML += `
+          <div class="dish-card">
+            <h3>${dish.name}</h3>
+            <img src="${dish.img}" class="dish-img" />
+            <button class="add-btn">ADD</button>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+
